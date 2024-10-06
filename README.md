@@ -21,10 +21,6 @@ A simple React app that allows users to select a recipe from a dropdown and view
    ```bash
    git clone https://github.com/Chlpx/recipe-app.git
    ```
-### Change directory
-```bash
-cd recipe-app
-```
 ### Install dependencies
 ```bash
 npm install
