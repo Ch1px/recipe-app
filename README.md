@@ -38,4 +38,4 @@ http://localhost:3000
 ### API Source
 
 Recipes are fetched from the DummyJSON API:
-https://dummyjson.com/recipes?select=name
+https://dummyjson.com/recipes?
