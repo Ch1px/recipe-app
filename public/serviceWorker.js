@@ -22,16 +22,22 @@ self.addEventListener("fetch", (event) => {
         return response;
       }
 
-      console.log(`[Service Worker] Not found in cache, fetching from network: ${event.request.url}`);
+      console.log(
+        `[Service Worker] Not found in cache, fetching from network: ${event.request.url}`
+      );
       return fetch(event.request).then((response) => {
         if (!response || response.status !== 200) {
-          console.log(`[Service Worker] Fetch failed or response is invalid for: ${event.request.url}`);
+          console.log(
+            `[Service Worker] Fetch failed or response is invalid for: ${event.request.url}`
+          );
           return response;
         }
 
         const responseClone = response.clone();
         caches.open(CACHE_NAME).then((cache) => {
-          console.log(`[Service Worker] Caching new resource: ${event.request.url}`);
+          console.log(
+            `[Service Worker] Caching new resource: ${event.request.url}`
+          );
           cache.put(event.request, responseClone);
         });
 
