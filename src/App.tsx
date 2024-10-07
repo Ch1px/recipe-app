@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import RecipeDropdown from './components/recipeDropdown';
-import RecipeDetails from './components/recipeDetails';
+import React, { useState } from "react";
+import RecipeDropdown from "./components/recipeDropdown";
+import RecipeDetails from "./components/recipeDetails";
 
 const App: React.FC = () => {
   const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
@@ -23,4 +23,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

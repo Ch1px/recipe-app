@@ -1,9 +1,7 @@
-const CACHE_NAME = 'recipe-cache';
-const urlsToCache = [
-  'https://dummyjson.com/recipes?select=name',
-];
+const CACHE_NAME = "recipe-cache";
+const urlsToCache = ["https://dummyjson.com/recipes?select=name"];
 
-self.addEventListener('install', (event) => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
@@ -11,7 +9,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
       if (response) {
